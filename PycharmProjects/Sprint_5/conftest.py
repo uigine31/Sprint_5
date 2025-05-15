@@ -5,6 +5,8 @@ from webdriver_manager.chrome import ChromeDriverManager
 from locators.locators import Locators
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
+from urls import Urls
+from test_data.test_data import TestData
 
 @pytest.fixture(scope="function")
 def driver():
@@ -16,9 +18,9 @@ def driver():
 
 @pytest.fixture
 def login(driver):
-    driver.get('https://stellarburgers.nomoreparties.site/login')
-    driver.find_element(*Locators.LOGIN_EMAIL_INPUT).send_keys("evgsmoloviy22007@yandex.ru")
-    driver.find_element(*Locators.LOGIN_PASSWORD_INPUT).send_keys("123456")
+    driver.get(Urls.LOGIN_PAGE)
+    driver.find_element(*Locators.LOGIN_EMAIL_INPUT).send_keys(TestData.EMAIL)
+    driver.find_element(*Locators.LOGIN_PASSWORD_INPUT).send_keys(TestData.PASSWORD)
     driver.find_element(*Locators.LOGIN_SUBMIT_BUTTON).click()
-    WebDriverWait(driver, 20).until(EC.url_to_be("https://stellarburgers.nomoreparties.site/"))
+    WebDriverWait(driver, 20).until(EC.url_to_be(Urls.BASE_URL))
     yield

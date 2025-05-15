@@ -1,14 +1,14 @@
 from selenium.webdriver.common.by import By
 
 class Locators:
-    # Локатор для поля "Имя" (первый input)
-    NAME_INPUT = (By.XPATH, "(//input[@class='text input__textfield text_type_main-default'])[1]")
+    # Локатор для поля "Имя" 
+    NAME_INPUT = (By.XPATH, "//label[text()='Имя']/following-sibling::input[@class='text input__textfield text_type_main-default']")
 
-    # Локатор для поля "Email" (второй input)
-    EMAIL_INPUT = (By.XPATH, "(//input[@class='text input__textfield text_type_main-default'])[2]")
+    # Локатор для поля "Email" 
+    EMAIL_INPUT = (By.XPATH, "//label[text()='Email']/following-sibling::input[@class='text input__textfield text_type_main-default']")
 
-    # Локатор для поля "Пароль" (третий input)
-    PASSWORD_INPUT = (By.XPATH, "(//input[@class='text input__textfield text_type_main-default'])[3]")
+    # Локатор для поля "Пароль" 
+    PASSWORD_INPUT = (By.XPATH, "//label[text()='Пароль']/following-sibling::input[@class='text input__textfield text_type_main-default']")
 
     # Локатор для кнопки "Зарегистрироваться"
     SUBMIT_BUTTON = (By.XPATH, "//button[@class='button_button__33qZ0 button_button_type_primary__1O7Bx button_button_size_medium__3zxIa']")

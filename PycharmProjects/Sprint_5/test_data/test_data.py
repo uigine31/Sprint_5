@@ -1,7 +1,4 @@
-from attr import dataclass
-
-@dataclass
-class UserData:
-    name: str = "Евгений"
-    email: str = "evgsmoloviy22007@yandex.ru"
-    password: str = "123456"
+class TestData:
+    NAME = "Евгений"
+    EMAIL = "evgsmoloviy22007@yandex.ru"
+    PASSWORD = "123456"
